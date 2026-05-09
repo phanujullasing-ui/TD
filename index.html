@@ -1,24 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>TD Fabric Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TD Fabric Store | ศูนย์รวมผ้าพับคุณภาพสูง ราคาโรงงาน</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
-        .button { background-color: #00B900; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; }
+        :root {
+            --primary-color: #1a252f;
+            --accent-color: #d35400;
+            --line-color: #00b900;
+            --bg-body: #f4f7f6;
+        }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; background-color: var(--bg-body); color: #333; line-height: 1.6; }
+        header { background: white; padding: 25px 0; text-align: center; border-bottom: 4px solid var(--accent-color); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 60px 20px; border-radius: 12px; margin-bottom: 40px; }
+        .hero h1 { font-size: 3rem; margin: 0; }
+        .hero p { font-size: 1.3rem; margin: 15px 0; opacity: 0.9; }
+
+        /* Catalogue Section */
+        .section-title { text-align: center; margin-bottom: 30px; }
+        .section-title h2 { font-size: 2rem; color: var(--primary-color); position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-title h2::after { content: ''; width: 60%; height: 3px; background: var(--accent-color); position: absolute; bottom: 0; left: 20%; }
+
+        .catalogue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+        .fabric-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s; border: 1px solid #eee; }
+        .fabric-card:hover { transform: translateY(-5px); }
+        .fabric-thumb { height: 160px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #888; font-size: 0.9rem; text-align: center; padding: 10px; }
+        .fabric-info { padding: 15px; }
+        .fabric-info h3 { margin: 0 0 5px; font-size: 1.1rem; color: var(--primary-color); }
+        .fabric-info p { margin: 0; font-size: 0.85rem; color: #777; }
+        .tag-price { color: var(--accent-color); font-weight: bold; font-size: 1rem; display: block; margin-top: 8px; }
+
+        /* Contact Section */
+        .contact-section { background: white; padding: 40px; border-radius: 12px; margin-top: 50px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; border-left: 8px solid var(--line-color); }
+        .contact-text { flex: 1; min-width: 300px; }
+        .contact-text h2 { color: var(--primary-color); margin-top: 0; }
+        .contact-text p { margin: 10px 0; }
+        .qr-container { flex: 0 0 200px; text-align: center; }
+        .qr-container img { width: 100%; border: 1px solid #ddd; padding: 10px; background: #fff; border-radius: 8px; }
+
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: 0.3s; margin-top: 15px; }
+        .btn-line { background: var(--line-color); color: white; margin-right: 10px; }
+        .btn-fb { background: #1877f2; color: white; }
+        .btn:hover { opacity: 0.85; transform: scale(1.05); }
+
+        footer { text-align: center; padding: 40px 0; color: #999; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <h1>Welcome to TD Fabric Store</h1>
-    <p>We sell high-quality fabric by the bolt.</p>
-    
-    <h2>How to Order</h2>
-    <p>Browse our catalogue and message us to place an order.</p>
-    
-    <a href="https://www.facebook.com/TDFabric" target="_blank">View Catalogue on Facebook</a>
-    <br><br>
-    <a href="#" class="button">Chat with us on Line</a>
 
-    <h2>Our Location</h2>
-    <p>Visit us at our shop: <a href="https://share.google/DbIPSJVS5MPxnn8ei" target="_blank">View on Google Maps</a></p>
+<header>
+    <div class="container">
+        <h1 style="margin:0; letter-spacing: 2px;">TD FABRIC STORE</h1>
+    </div>
+</header>
+
+<div class="container">
+    <section class="hero">
+        <h1>ขายส่งผ้าพับ คุณภาพพรีเมียม</h1>
+        <p>แหล่งรวมผ้า Cotton, TK, TC และผ้าแฟชั่น ราคาสำเพ็ง-วัดสน</p>
+        <a href="tel:0842111226" class="btn" style="background: white; color: var(--primary-color);">โทรเลย: 084-211-1226</a>
+    </section>
+
+    <div class="section-title">
+        <h2>รายการสินค้าแนะนำ (Mockup)</h2>
+    </div>
+
+    <div class="catalogue-grid">
+        <!-- Item 1 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">Cotton 100% Combed<br>32</div>
+            <div class="fabric-info">
+                <h3>คอตตอนพรีเมียม</h3>
+                <p>รหัส: TD-C32-01</p>
+                <span class="tag-price">เหมาะสำหรับเสื้อยืด</span>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">TC Twill 210 Lines</div>
+            <div class="fabric-info">
+                <h3>ผ้าทีซีลายสอง</h3>
+                <p>รหัส: TD-TC21-02</p>
+                <span class="tag-price">เนื้อหนา ทนทาน</span>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">Linen Looking<br>Polyester</div>
+            <div class="fabric-info">
+                <h3>ผ้าโพลีลายลินิน</h3>
+                <p>รหัส: TD-LP55-03</p>
+                <span class="tag-price">มินิมอล ไม่ยับง่าย</span>
+            </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">Silk Satin<br>High Gloss</div>
+            <div class="fabric-info">
+                <h3>ผ้าซาตินเงาพิเศษ</h3>
+                <p>รหัส: TD-SS99-04</p>
+                <span class="tag-price">งานเดรส งานหรู</span>
+            </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">Canvas 12oz<br>Natural White</div>
+            <div class="fabric-info">
+                <h3>ผ้าแคนวาส 12 ออนซ์</h3>
+                <p>รหัส: TD-CV12-05</p>
+                <span class="tag-price">สำหรับกระเป๋า-หมวก</span>
+            </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">Oxford Cotton<br>Soft Touch</div>
+            <div class="fabric-info">
+                <h3>ผ้าอ็อกฟอร์ด</h3>
+                <p>รหัส: TD-OX10-06</p>
+                <span class="tag-price">ตัดเสื้อเชิ้ตสวย</span>
+            </div>
+        </div>
+        <!-- Item 7 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">Double Gauze<br>Baby Grade</div>
+            <div class="fabric-info">
+                <h3>ผ้าสาลู 2 ชั้น</h3>
+                <p>รหัส: TD-DG07-07</p>
+                <span class="tag-price">นุ่มพิเศษ ผิวแพ้ง่าย</span>
+            </div>
+        </div>
+        <!-- Item 8 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">Velvet Stretch<br>Premium Grade</div>
+            <div class="fabric-info">
+                <h3>ผ้ากำมะหยี่ยืด</h3>
+                <p>รหัส: TD-VV22-08</p>
+                <span class="tag-price">เนื้อนุ่ม เงางาม</span>
+            </div>
+        </div>
+        <!-- Item 9 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">Spandex Jersey<br>4-Way Stretch</div>
+            <div class="fabric-info">
+                <h3>ผ้าสแปนเด็กซ์</h3>
+                <p>รหัส: TD-SP44-09</p>
+                <span class="tag-price">ยืดหยุ่นสูง คืนตัวดี</span>
+            </div>
+        </div>
+        <!-- Item 10 -->
+        <div class="fabric-card">
+            <div class="fabric-thumb">Denim 10oz<br>Deep Blue</div>
+            <div class="fabric-info">
+                <h3>ผ้ายีนส์ 10 ออนซ์</h3>
+                <p>รหัส: TD-DM10-10</p>
+                <span class="tag-price">ยีนส์เนื้อนิ่มใส่สบาย</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="contact-section">
+        <div class="contact-text">
+            <h2>สั่งซื้อและสอบถามสต็อก</h2>
+            <p>สนใจผ้าพับรหัสไหน หรือต้องการดูแคตตาล็อกสีเพิ่มเติม ติดต่อเราได้ทันที</p>
+            <p><strong>เบอร์โทรศัพท์:</strong> 084-211-1226</p>
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/TDFabric" target="_blank">TDFabric Store</a></p>
+            <p><strong>สถานที่ตั้ง:</strong> <a href="https://share.google/DbIPSJVS5MPxnn8ei" target="_blank">เปิด Google Maps</a></p>
+            
+            <div style="margin-top: 20px;">
+                <a href="https://line.me/ti/p/~@TDFabric" class="btn btn-line">แชทผ่าน LINE</a>
+                <a href="https://www.facebook.com/TDFabric" class="btn btn-fb" target="_blank">ดู Catalogue</a>
+            </div>
+        </div>
+        <div class="qr-container">
+            <p style="margin-bottom: 10px; font-weight: bold; color: var(--line-color);">Scan QR เพื่อสั่งซื้อ</p>
+            <!-- เรียกใช้รูปจากโฟลเดอร์ images -->
+            <img src="images/line-qr.png" alt="Line QR Code">
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2026 TD Fabric Store. All Rights Reserved.<br>จำหน่ายผ้าพับขายส่ง คุณภาพดี ราคาจริงใจ</p>
+</footer>
+
 </body>
 </html>
