@@ -20,7 +20,13 @@ cards.forEach(function (card) {
   button.textContent = "💬 สนใจผ้านี้ ทักไลน์";
 
   button.addEventListener("click", function () {
-    const message = "สวัสดีครับ สนใจผ้า " + name + " รหัส " + code;
+    // ถ้าชื่อขึ้นต้นด้วย "ผ้า" อยู่แล้ว ไม่ต้องเติมคำว่า "ผ้า" ซ้ำ
+    let fabricName = name;
+    if (name.startsWith("ผ้า") === false) {
+      fabricName = "ผ้า" + name;
+    }
+
+    const message = "สวัสดีครับ สนใจ" + fabricName + " รหัส " + code;
     const lineLink = "https://line.me/R/oaMessage/" + lineId + "/?" + encodeURIComponent(message);
     window.open(lineLink, "_blank");
   });
