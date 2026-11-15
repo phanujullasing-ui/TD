@@ -1,15 +1,29 @@
 console.log("สวัสดี ร้านผ้า TD");
 
+// นับการ์ดผ้า แล้วเขียนจำนวนบนหัวข้อ
 const cards = document.querySelectorAll(".fabric-card");
 console.log("มีการ์ดผ้า", cards.length, "ใบ");
 
 const title = document.querySelector(".section-title h2");
 title.textContent = "รายการสินค้าแนะนำ (" + cards.length + " รายการ)";
 
-const interestButton = document.querySelector(".btn-interest");
+// ไอดี LINE ของร้าน (ถ้าเปลี่ยนไอดี แก้แค่บรรทัดนี้)
+const lineId = "@TD3435";
 
-interestButton.addEventListener("click", function () {
-  const message = "สวัสดีครับ สนใจผ้า คอตตอนพรีเมียม รหัส TD-C32-01";
-  const lineLink = "https://line.me/R/oaMessage/@TD3435/?" + encodeURIComponent(message);
-  window.open(lineLink, "_blank");
+// ใส่ปุ่ม "สนใจผ้านี้" ให้การ์ดทุกใบ
+cards.forEach(function (card) {
+  const name = card.querySelector("h3").textContent;
+  const code = card.querySelector("p").textContent.replace("รหัส:", "").trim();
+
+  const button = document.createElement("button");
+  button.className = "btn-interest";
+  button.textContent = "💬 สนใจผ้านี้ ทักไลน์";
+
+  button.addEventListener("click", function () {
+    const message = "สวัสดีครับ สนใจผ้า " + name + " รหัส " + code;
+    const lineLink = "https://line.me/R/oaMessage/" + lineId + "/?" + encodeURIComponent(message);
+    window.open(lineLink, "_blank");
+  });
+
+  card.querySelector(".fabric-info").appendChild(button);
 });
